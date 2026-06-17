@@ -1,0 +1,23 @@
+# Python Virtual Environments
+venv/
+.venv/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Local Data / Large Datasets
+data/
+*.csv
+*.xml
+
+# IDE Configs
+.vscode/
+.idea/
