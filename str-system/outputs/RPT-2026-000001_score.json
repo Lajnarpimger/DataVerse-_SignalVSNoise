@@ -1,0 +1,81 @@
+{
+  "report_id": "RPT-2026-000001",
+  "final_utility_score": 0.0,
+  "components": {
+    "coverage_score": 0.0,
+    "validation_score": 0.0,
+    "signal_score": 0.0,
+    "noise_score": 0.5
+  },
+  "diagnostics": {
+    "final_score": 0.0,
+    "traceability": {
+      "coverage_evidence": [
+        "Missing transaction.amount: '535368.64' not found in narrative.",
+        "Missing transaction.currency: 'NPR' not found in narrative.",
+        "Missing transaction.date: '2022-10-07T10:46:37' not found in narrative.",
+        "Missing transaction.type: 'Z' not found in narrative.",
+        "Missing transaction.channel: 'Cash Deposit transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000003412850188' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000003980427782' not found in narrative.",
+        "Missing party.customer: 'Jensen' not found in narrative.",
+        "Missing party.counterparty: 'Jeremy Martinez' not found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'Z' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Failed validation amount: '535368.64' not supported in narrative.",
+        "Failed validation date: '2022-10-07T10:46:37' not supported in narrative.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Failed validation counterparty: 'Jeremy Martinez' not supported in narrative.",
+        "Failed validation type: 'Z' not supported in narrative."
+      ],
+      "signal_evidence": [],
+      "noise_evidence": [
+        "Suspicious transaction observed."
+      ]
+    },
+    "failure_reasons": [
+      {
+        "dimension": "coverage",
+        "issue": "Low coverage of structured data in narrative",
+        "evidence": "Coverage ratio is 0.0"
+      },
+      {
+        "dimension": "validation",
+        "issue": "Data mismatch between XML and narrative",
+        "evidence": "Validation ratio is 0.0"
+      },
+      {
+        "dimension": "signal",
+        "issue": "Low analytical signal",
+        "evidence": "Signal score is 0.0"
+      }
+    ],
+    "missing_information": [
+      "Missing transaction.amount: '535368.64' not found in narrative.",
+      "Missing transaction.currency: 'NPR' not found in narrative.",
+      "Missing transaction.date: '2022-10-07T10:46:37' not found in narrative.",
+      "Missing transaction.type: 'Z' not found in narrative.",
+      "Missing transaction.channel: 'Cash Deposit transfer' not found in narrative.",
+      "Missing transaction.source: 'NP00000000003412850188' not found in narrative.",
+      "Missing transaction.destination: 'NP00000000003980427782' not found in narrative.",
+      "Missing party.customer: 'Jensen' not found in narrative.",
+      "Missing party.counterparty: 'Jeremy Martinez' not found in narrative.",
+      "Missing party.country: 'GB' not found in narrative.",
+      "Missing party.account_type: 'Z' not found in narrative.",
+      "Failed validation amount: '535368.64' not supported in narrative.",
+      "Failed validation date: '2022-10-07T10:46:37' not supported in narrative.",
+      "Failed validation country: 'GB' not supported in narrative.",
+      "Failed validation counterparty: 'Jeremy Martinez' not supported in narrative.",
+      "Failed validation type: 'Z' not supported in narrative.",
+      "No specific details provided",
+      "Lacks context and reasoning",
+      "Does not explain the suspicion or provide actionable information"
+    ],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Report lacks useful actionable information."
+    ]
+  }
+}

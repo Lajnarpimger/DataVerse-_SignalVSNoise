@@ -1,0 +1,58 @@
+{
+  "report_id": "RPT-2026-000020",
+  "final_utility_score": 0.6471,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.8800000000000001,
+    "noise_score": 0.175
+  },
+  "diagnostics": {
+    "final_score": 0.6471,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '13018.38' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T20:29:12' found in narrative.",
+        "Covered transaction.type: 'J' found in narrative.",
+        "Missing transaction.channel: 'Credit card transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000000440030868' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000002744862057' not found in narrative.",
+        "Covered party.customer: 'Hoffman' found in narrative.",
+        "Covered party.counterparty: 'Welch and Sons' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'Z' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '13018.38'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T20:29:12'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Welch and Sons'.",
+        "Validated type: Correct match found in narrative for 'J'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 13,018.",
+        "The principal counterparties observed were Welch and Sons.",
+        "no adverse media or sanctions matches were identified at the time of filing",
+        "the desk weighed before escalating"
+      ],
+      "noise_evidence": [
+        "submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Context about the customer's background is given.",
+      "The exact reason for suspicion is clearly articulated.",
+      "Logical reasoning linking facts to suspicion is present.",
+      "Enough clear information is provided for law enforcement action.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 13,018.",
+      "The principal counterparties observed were Welch and Sons.",
+      "no adverse media or sanctions matches were identified at the time of filing",
+      "the desk weighed before escalating"
+    ]
+  }
+}

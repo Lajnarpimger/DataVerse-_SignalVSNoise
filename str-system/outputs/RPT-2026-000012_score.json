@@ -1,0 +1,59 @@
+{
+  "report_id": "RPT-2026-000012",
+  "final_utility_score": 0.7014477272727273,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.89,
+    "noise_score": 0.1125
+  },
+  "diagnostics": {
+    "final_score": 0.7014477272727273,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '862981.43' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T14:32:30' found in narrative.",
+        "Covered transaction.type: 'J' found in narrative.",
+        "Missing transaction.channel: 'Debit card transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000002231096348' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000001338940611' not found in narrative.",
+        "Covered party.customer: 'Mosley' found in narrative.",
+        "Covered party.counterparty: 'Susan Cherry' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'C' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '862981.43'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T14:32:30'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Susan Cherry'.",
+        "Validated type: Correct match found in narrative for 'J'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 862,981.",
+        "The principal counterparties observed were Susan Cherry.",
+        "the velocity and aggregate value of the funds are not fully consistent with that profile.",
+        "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession"
+      ],
+      "noise_evidence": [
+        "During the branch's periodic transaction-monitoring review, the compliance desk at PCBL examined the account held by Stephanie Mosley after an internal threshold alert was triggered.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Context of the customer's background is given.",
+      "The exact reason for suspicion is clearly articulated.",
+      "Logical reasoning linking facts to suspicion is present.",
+      "Information is actionable for law enforcement.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 862,981.",
+      "The principal counterparties observed were Susan Cherry.",
+      "the velocity and aggregate value of the funds are not fully consistent with that profile.",
+      "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession"
+    ]
+  }
+}

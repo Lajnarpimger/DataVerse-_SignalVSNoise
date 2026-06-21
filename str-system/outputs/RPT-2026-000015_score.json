@@ -1,0 +1,72 @@
+{
+  "report_id": "RPT-2026-000015",
+  "final_utility_score": 0.6800727272727272,
+  "components": {
+    "coverage_score": 0.45454545454545453,
+    "validation_score": 0.6,
+    "signal_score": 0.9199999999999999,
+    "noise_score": 0.1
+  },
+  "diagnostics": {
+    "final_score": 0.6800727272727272,
+    "traceability": {
+      "coverage_evidence": [
+        "Missing transaction.amount: '23485.23' not found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T17:13:16' found in narrative.",
+        "Covered transaction.type: 'A' found in narrative.",
+        "Missing transaction.channel: 'Cash Withdrawal transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000003315125423' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000003600904550' not found in narrative.",
+        "Covered party.customer: 'Marshall' found in narrative.",
+        "Covered party.counterparty: 'Caleb Kelley' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'A' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Failed validation amount: '23485.23' not supported in narrative.",
+        "Validated date: Correct match found in narrative for '2022-10-07T17:13:16'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Caleb Kelley'.",
+        "Validated type: Correct match found in narrative for 'A'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 2 transaction(s) \u2014 predominantly cash withdrawals \u2014 amounting to approximately NPR 65,539.",
+        "The principal counterparties observed were Caleb Kelley.",
+        "the velocity and aggregate value of the funds are not fully consistent with that profile.",
+        "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession, a pattern the officer considers consistent with Cash Withdrawal."
+      ],
+      "noise_evidence": [
+        "For context, the customer's KYC file lists a modest declared income profile; in the reviewing officer's judgement the velocity and aggregate value of the funds are not fully consistent with that profile.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [
+      {
+        "dimension": "coverage",
+        "issue": "Low coverage of structured data in narrative",
+        "evidence": "Coverage ratio is 0.45"
+      }
+    ],
+    "missing_information": [
+      "Missing transaction.amount: '23485.23' not found in narrative.",
+      "Missing transaction.channel: 'Cash Withdrawal transfer' not found in narrative.",
+      "Missing transaction.source: 'NP00000000003315125423' not found in narrative.",
+      "Missing transaction.destination: 'NP00000000003600904550' not found in narrative.",
+      "Missing party.country: 'GB' not found in narrative.",
+      "Missing party.account_type: 'A' not found in narrative."
+    ],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Clear context of the customer's background is given.",
+      "The exact reason for suspicion is clearly articulated.",
+      "Logical reasoning linking facts to suspicion is present.",
+      "Sufficient information is provided for law enforcement action.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 2 transaction(s) \u2014 predominantly cash withdrawals \u2014 amounting to approximately NPR 65,539.",
+      "The principal counterparties observed were Caleb Kelley.",
+      "the velocity and aggregate value of the funds are not fully consistent with that profile.",
+      "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession, a pattern the officer considers consistent with Cash Withdrawal."
+    ]
+  }
+}

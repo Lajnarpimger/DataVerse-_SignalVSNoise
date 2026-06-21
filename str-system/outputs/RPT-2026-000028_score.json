@@ -1,0 +1,59 @@
+{
+  "report_id": "RPT-2026-000028",
+  "final_utility_score": 0.62235,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.8300000000000001,
+    "noise_score": 0.175
+  },
+  "diagnostics": {
+    "final_score": 0.62235,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '68154.47' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-08T06:51:19' found in narrative.",
+        "Covered transaction.type: 'A' found in narrative.",
+        "Missing transaction.channel: 'Cash Withdrawal transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000000983174071' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000000894070684' not found in narrative.",
+        "Covered party.customer: 'Dominguez' found in narrative.",
+        "Covered party.counterparty: 'Henry King' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'Z' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '68154.47'.",
+        "Validated date: Correct match found in narrative for '2022-10-08T06:51:19'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Henry King'.",
+        "Validated type: Correct match found in narrative for 'A'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-08 and 2022-10-08, the customer conducted 1 transaction(s) \u2014 predominantly cash withdrawals \u2014 amounting to approximately NPR 68,154.",
+        "Of these, 1 were cross-border, routed to counterparties outside the customer's usual corridor.",
+        "The principal counterparties observed were Henry King.",
+        "In the reviewing officer's judgement the velocity and aggregate value of the funds are not fully consistent with that profile."
+      ],
+      "noise_evidence": [
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing.",
+        "The customer has been with the institution for some years, which the desk weighed before escalating."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates, amounts, and names are provided.",
+      "The context of the customer's background is clear.",
+      "The exact reason for suspicion is articulated.",
+      "Logical reasoning links facts to suspicion.",
+      "Information is actionable for law enforcement.",
+      "Between 2022-10-08 and 2022-10-08, the customer conducted 1 transaction(s) \u2014 predominantly cash withdrawals \u2014 amounting to approximately NPR 68,154.",
+      "Of these, 1 were cross-border, routed to counterparties outside the customer's usual corridor.",
+      "The principal counterparties observed were Henry King.",
+      "In the reviewing officer's judgement the velocity and aggregate value of the funds are not fully consistent with that profile."
+    ]
+  }
+}

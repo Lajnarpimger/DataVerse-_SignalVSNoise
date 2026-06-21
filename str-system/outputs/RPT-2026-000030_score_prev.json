@@ -1,0 +1,82 @@
+{
+  "report_id": "RPT-2026-000030",
+  "final_utility_score": 0.48763636363636353,
+  "components": {
+    "coverage_score": 0.2727272727272727,
+    "validation_score": 0.2,
+    "signal_score": 0.9199999999999999,
+    "noise_score": 0.25
+  },
+  "diagnostics": {
+    "final_score": 0.48763636363636353,
+    "traceability": {
+      "coverage_evidence": [
+        "Missing transaction.amount: '815799.15' not found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Missing transaction.date: '2022-10-08T07:04:35' not found in narrative.",
+        "Missing transaction.type: 'F' not found in narrative.",
+        "Missing transaction.channel: 'Cross-border transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000000017595032' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000004011650754' not found in narrative.",
+        "Covered party.customer: 'Downs' found in narrative.",
+        "Covered party.counterparty: 'Sarah English' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'C' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Failed validation amount: '815799.15' not supported in narrative.",
+        "Failed validation date: '2022-10-08T07:04:35' not supported in narrative.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Sarah English'.",
+        "Failed validation type: 'F' not supported in narrative."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-08 and 2022-10-08, the customer conducted 1 transaction(s) \u2014 predominantly cross-border wires \u2014 amounting to approximately NPR 815,799.",
+        "The principal counterparties observed were Sarah English.",
+        "no adverse media or sanctions matches were identified at the time of filing",
+        "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession"
+      ],
+      "noise_evidence": [
+        "During the branch's periodic transaction-monitoring review, the compliance desk at SANIMA examined the account held by Gary Downs after an internal threshold alert was triggered.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [
+      {
+        "dimension": "coverage",
+        "issue": "Low coverage of structured data in narrative",
+        "evidence": "Coverage ratio is 0.27"
+      },
+      {
+        "dimension": "validation",
+        "issue": "Data mismatch between XML and narrative",
+        "evidence": "Validation ratio is 0.2"
+      }
+    ],
+    "missing_information": [
+      "Missing transaction.amount: '815799.15' not found in narrative.",
+      "Missing transaction.date: '2022-10-08T07:04:35' not found in narrative.",
+      "Missing transaction.type: 'F' not found in narrative.",
+      "Missing transaction.channel: 'Cross-border transfer' not found in narrative.",
+      "Missing transaction.source: 'NP00000000000017595032' not found in narrative.",
+      "Missing transaction.destination: 'NP00000000004011650754' not found in narrative.",
+      "Missing party.country: 'GB' not found in narrative.",
+      "Missing party.account_type: 'C' not found in narrative.",
+      "Failed validation amount: '815799.15' not supported in narrative.",
+      "Failed validation date: '2022-10-08T07:04:35' not supported in narrative.",
+      "Failed validation country: 'GB' not supported in narrative.",
+      "Failed validation type: 'F' not supported in narrative."
+    ],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "The context of the customer's usual behavior is explained.",
+      "A clear explanation for suspicion is given, linking transaction patterns to structuring.",
+      "Logical reasoning connects the facts to the suspicion.",
+      "Between 2022-10-08 and 2022-10-08, the customer conducted 1 transaction(s) \u2014 predominantly cross-border wires \u2014 amounting to approximately NPR 815,799.",
+      "The principal counterparties observed were Sarah English.",
+      "no adverse media or sanctions matches were identified at the time of filing",
+      "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession"
+    ]
+  }
+}

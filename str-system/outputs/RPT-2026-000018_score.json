@@ -1,0 +1,59 @@
+{
+  "report_id": "RPT-2026-000018",
+  "final_utility_score": 0.63225,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.85,
+    "noise_score": 0.175
+  },
+  "diagnostics": {
+    "final_score": 0.63225,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '1401025.64' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T19:54:57' found in narrative.",
+        "Covered transaction.type: 'J' found in narrative.",
+        "Missing transaction.channel: 'Credit card transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000003206009879' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000000621052335' not found in narrative.",
+        "Covered party.customer: 'Jenkins' found in narrative.",
+        "Covered party.counterparty: 'Griffith, Jackson and Castaneda' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'A' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '1401025.64'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T19:54:57'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Griffith, Jackson and Castaneda'.",
+        "Validated type: Correct match found in narrative for 'J'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 1,401,026.",
+        "The principal counterparties observed were Griffith, Jackson and Castaneda.",
+        "the velocity and aggregate value of the funds are not fully consistent with that profile.",
+        "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession, a pattern the officer considers consistent with Fan In."
+      ],
+      "noise_evidence": [
+        "During the branch's periodic transaction-monitoring review, the compliance desk at PRIME examined the account held by Daniel Jenkins after an internal threshold alert was triggered.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "The context of the customer's background is clear.",
+      "The exact reason for suspicion is clearly articulated.",
+      "Logical reasoning linking facts to suspicion is present.",
+      "The report provides enough information for law enforcement action.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 1,401,026.",
+      "The principal counterparties observed were Griffith, Jackson and Castaneda.",
+      "the velocity and aggregate value of the funds are not fully consistent with that profile.",
+      "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession, a pattern the officer considers consistent with Fan In."
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STR Signal vs Noise Triage System</title>
+    <link rel="stylesheet" href="/ui/style.css">
+    <!-- Clean Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar: Ranked List -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>STR Review Queue</h2>
+                <p>Ranked by Utility Score</p>
+            </div>
+            <div class="report-list" id="report-list">
+                <!-- Javascript will inject reports here -->
+                <div class="loading">Loading reports...</div>
+            </div>
+        </aside>
+
+        <!-- Main Content Pane -->
+        <main class="dashboard" id="dashboard" style="display: none;">
+            <header class="dashboard-header">
+                <div>
+                    <h1 id="report-title">Select a Report</h1>
+                    <p class="subtitle" id="report-subtitle">Review the analytical completeness and identified weaknesses.</p>
+                </div>
+                <div class="score-card">
+                    <span class="score-label">Utility Score</span>
+                    <span class="score-value" id="final-score">--</span>
+                </div>
+            </header>
+
+            <div class="grid-container">
+                <!-- Completeness Dimensions -->
+                <section class="panel dimensions-panel">
+                    <h3>Completeness Dimensions</h3>
+                    <div class="metric-group">
+                        <div class="metric">
+                            <span class="metric-name">Coverage (Specific Facts)</span>
+                            <span class="metric-val" id="score-coverage">--</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" id="bar-coverage"></div></div>
+                    </div>
+                    
+                    <div class="metric-group">
+                        <div class="metric">
+                            <span class="metric-name">Validation (Internal Consistency)</span>
+                            <span class="metric-val" id="score-validation">--</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" id="bar-validation"></div></div>
+                    </div>
+
+                    <div class="metric-group">
+                        <div class="metric">
+                            <span class="metric-name">Signal (Actionability & Rationale)</span>
+                            <span class="metric-val" id="score-signal">--</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill fill-green" id="bar-signal"></div></div>
+                    </div>
+
+                    <div class="metric-group">
+                        <div class="metric">
+                            <span class="metric-name">Noise (Generic/Boilerplate)</span>
+                            <span class="metric-val" id="score-noise">--</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill fill-red" id="bar-noise"></div></div>
+                    </div>
+                </section>
+
+                <!-- Weaknesses Panel -->
+                <section class="panel weakness-panel">
+                    <h3>Identified Weaknesses</h3>
+                    <div id="weaknesses-container">
+                        <!-- Javascript injects weak points here -->
+                    </div>
+                </section>
+                
+                <!-- Strengths Panel -->
+                <section class="panel strengths-panel">
+                    <h3>Analytical Strengths</h3>
+                    <div id="strengths-container">
+                        <!-- Javascript injects strengths here -->
+                    </div>
+                </section>
+                
+                <!-- Original Report Panel -->
+                <section class="panel" style="grid-column: span 2;">
+                    <h3>Structured STR Source Data</h3>
+                    <div id="xml-content" style="background: #ffffff; border-radius: 6px; overflow-x: auto; border: 1px solid var(--border-color);"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/ui/app.js"></script>
+</body>
+</html>

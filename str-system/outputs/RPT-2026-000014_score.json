@@ -1,0 +1,72 @@
+{
+  "report_id": "RPT-2026-000014",
+  "final_utility_score": 0.6546522727272727,
+  "components": {
+    "coverage_score": 0.45454545454545453,
+    "validation_score": 0.8,
+    "signal_score": 0.8400000000000001,
+    "noise_score": 0.1125
+  },
+  "diagnostics": {
+    "final_score": 0.6546522727272727,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '2087372.18' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T17:12:58' found in narrative.",
+        "Covered transaction.type: 'F' found in narrative.",
+        "Missing transaction.channel: 'Cross-border transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000001590655480' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000003041516121' not found in narrative.",
+        "Missing party.customer: 'May' not found in narrative.",
+        "Covered party.counterparty: 'Douglas Rosales' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'Z' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '2087372.18'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T17:12:58'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Douglas Rosales'.",
+        "Validated type: Correct match found in narrative for 'F'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly cross-border wires \u2014 amounting to approximately NPR 2,087,372.",
+        "Of these, 1 were cross-border, routed to counterparties outside the customer's usual corridor.",
+        "The principal counterparties observed were Douglas Rosales.",
+        "no adverse media or sanctions matches were identified at the time of filing",
+        "the desk weighed before escalating."
+      ],
+      "noise_evidence": [
+        "submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [
+      {
+        "dimension": "coverage",
+        "issue": "Low coverage of structured data in narrative",
+        "evidence": "Coverage ratio is 0.45"
+      }
+    ],
+    "missing_information": [
+      "Missing transaction.channel: 'Cross-border transfer' not found in narrative.",
+      "Missing transaction.source: 'NP00000000001590655480' not found in narrative.",
+      "Missing transaction.destination: 'NP00000000003041516121' not found in narrative.",
+      "Missing party.customer: 'May' not found in narrative.",
+      "Missing party.country: 'GB' not found in narrative.",
+      "Missing party.account_type: 'Z' not found in narrative."
+    ],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Context of the customer's usual behavior is given.",
+      "Reasoning linking facts to suspicion is clear.",
+      "Actionable information for law enforcement is present.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly cross-border wires \u2014 amounting to approximately NPR 2,087,372.",
+      "Of these, 1 were cross-border, routed to counterparties outside the customer's usual corridor.",
+      "The principal counterparties observed were Douglas Rosales.",
+      "no adverse media or sanctions matches were identified at the time of filing",
+      "the desk weighed before escalating."
+    ]
+  }
+}

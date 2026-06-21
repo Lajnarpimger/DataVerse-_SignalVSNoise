@@ -1,0 +1,59 @@
+{
+  "report_id": "RPT-2026-000002",
+  "final_utility_score": 0.7005272727272727,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.8699999999999999,
+    "noise_score": 0.1
+  },
+  "diagnostics": {
+    "final_score": 0.7005272727272727,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '21807.13' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T11:19:32' found in narrative.",
+        "Covered transaction.type: 'A' found in narrative.",
+        "Missing transaction.channel: 'Cash Withdrawal transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000000983174071' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000000894070684' not found in narrative.",
+        "Covered party.customer: 'Dominguez' found in narrative.",
+        "Covered party.counterparty: 'Henry King' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'Z' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '21807.13'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T11:19:32'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Henry King'.",
+        "Validated type: Correct match found in narrative for 'A'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly cash withdrawals \u2014 amounting to approximately NPR 21,807.",
+        "Of these, 1 were cross-border, routed to counterparties outside the customer's usual corridor.",
+        "The principal counterparties observed were Henry King.",
+        "In the reviewing officer's judgement the velocity and aggregate value of the funds are not fully consistent with that profile."
+      ],
+      "noise_evidence": [
+        "During the branch's periodic transaction-monitoring review, the compliance desk at ADBL examined the account held by Sally Dominguez after an internal threshold alert was triggered.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Context about the customer's usual behavior is given.",
+      "The exact reason for suspicion is clearly articulated.",
+      "Logical reasoning linking facts to suspicion is present.",
+      "Enough clear information is provided for law enforcement action.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly cash withdrawals \u2014 amounting to approximately NPR 21,807.",
+      "Of these, 1 were cross-border, routed to counterparties outside the customer's usual corridor.",
+      "The principal counterparties observed were Henry King.",
+      "In the reviewing officer's judgement the velocity and aggregate value of the funds are not fully consistent with that profile."
+    ]
+  }
+}

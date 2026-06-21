@@ -1,0 +1,60 @@
+{
+  "report_id": "RPT-2026-000016",
+  "final_utility_score": 0.6871090909090908,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.9199999999999999,
+    "noise_score": 0.15
+  },
+  "diagnostics": {
+    "final_score": 0.6871090909090908,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '1628443.64' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T17:25:38' found in narrative.",
+        "Covered transaction.type: 'J' found in narrative.",
+        "Missing transaction.channel: 'Credit card transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000002752249116' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000002064021617' not found in narrative.",
+        "Covered party.customer: 'Moore' found in narrative.",
+        "Covered party.counterparty: 'C. Edwards' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'B' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '1628443.64'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T17:25:38'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'C. Edwards'.",
+        "Validated type: Correct match found in narrative for 'J'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 1,628,444.",
+        "The principal counterparties observed were C. Edwards.",
+        "no adverse media or sanctions matches were identified at the time of filing",
+        "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession"
+      ],
+      "noise_evidence": [
+        "During the branch's periodic transaction-monitoring review, the compliance desk at PRABHU examined the account held by Richard Moore after an internal threshold alert was triggered.",
+        "For context, the customer's KYC file lists a modest declared income profile; in the reviewing officer's judgement the velocity and aggregate value of the funds are not fully consistent with that profile.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Clear context of the customer's background is given.",
+      "The exact reason for suspicion is clearly articulated.",
+      "Logical reasoning linking facts to suspicion is present.",
+      "Sufficient information is provided for law enforcement action.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 1,628,444.",
+      "The principal counterparties observed were C. Edwards.",
+      "no adverse media or sanctions matches were identified at the time of filing",
+      "a number of the transfers appear to have been deliberately kept below reporting thresholds and were executed in rapid succession"
+    ]
+  }
+}

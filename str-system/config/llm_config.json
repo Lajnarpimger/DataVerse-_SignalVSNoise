@@ -1,0 +1,11 @@
+{
+  "endpoint": "http://localhost:11434/api/generate",
+  "primary_model": "qwen2.5:7b-instruct",
+  "fallback_models": ["mistral:7b-instruct", "llama3.1:8b-instruct"],
+  "options": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "max_tokens": 1024,
+    "format": "json"
+  }
+}

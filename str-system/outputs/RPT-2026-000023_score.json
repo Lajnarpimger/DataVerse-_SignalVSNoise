@@ -1,0 +1,58 @@
+{
+  "report_id": "RPT-2026-000023",
+  "final_utility_score": 0.6421499999999999,
+  "components": {
+    "coverage_score": 0.5454545454545454,
+    "validation_score": 0.8,
+    "signal_score": 0.8699999999999999,
+    "noise_score": 0.175
+  },
+  "diagnostics": {
+    "final_score": 0.6421499999999999,
+    "traceability": {
+      "coverage_evidence": [
+        "Covered transaction.amount: '2047138.81' found in narrative.",
+        "Covered transaction.currency: 'NPR' found in narrative.",
+        "Covered transaction.date: '2022-10-07T22:51:21' found in narrative.",
+        "Covered transaction.type: 'J' found in narrative.",
+        "Missing transaction.channel: 'Debit card transfer' not found in narrative.",
+        "Missing transaction.source: 'NP00000000000949840915' not found in narrative.",
+        "Missing transaction.destination: 'NP00000000000621052335' not found in narrative.",
+        "Covered party.customer: 'Brock' found in narrative.",
+        "Covered party.counterparty: 'Griffith, Jackson and Castaneda' found in narrative.",
+        "Missing party.country: 'GB' not found in narrative.",
+        "Missing party.account_type: 'Z' not found in narrative."
+      ],
+      "validation_evidence": [
+        "Validated amount: Correct match found in narrative for '2047138.81'.",
+        "Validated date: Correct match found in narrative for '2022-10-07T22:51:21'.",
+        "Failed validation country: 'GB' not supported in narrative.",
+        "Validated counterparty: Correct match found in narrative for 'Griffith, Jackson and Castaneda'.",
+        "Validated type: Correct match found in narrative for 'J'."
+      ],
+      "signal_evidence": [
+        "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 2,047,139.",
+        "The principal counterparties observed were Griffith, Jackson and Castaneda.",
+        "no adverse media or sanctions matches were identified at the time of filing",
+        "the desk weighed before escalating"
+      ],
+      "noise_evidence": [
+        "During the branch's periodic transaction-monitoring review, the compliance desk at KUMARI examined the account held by David Brock after an internal threshold alert was triggered.",
+        "This report is submitted out of an abundance of caution for the compliance unit's further analysis and does not, by itself, constitute a determination of wrongdoing."
+      ]
+    },
+    "failure_reasons": [],
+    "missing_information": [],
+    "why_report_is_vague": [],
+    "why_report_is_useful_or_not": [
+      "Specific dates and amounts are provided.",
+      "Clear context about the customer's background and transaction details.",
+      "Reasoning is logically linked to the suspicion of money laundering.",
+      "Actionable information for law enforcement.",
+      "Between 2022-10-07 and 2022-10-07, the customer conducted 1 transaction(s) \u2014 predominantly card payments \u2014 amounting to approximately NPR 2,047,139.",
+      "The principal counterparties observed were Griffith, Jackson and Castaneda.",
+      "no adverse media or sanctions matches were identified at the time of filing",
+      "the desk weighed before escalating"
+    ]
+  }
+}
