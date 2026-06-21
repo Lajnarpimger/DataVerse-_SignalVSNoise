@@ -17,6 +17,12 @@ __pycache__/
 data/
 *.csv
 *.xml
+outputs/
+*.json
+*.sqlite
+*.sqlite3
+*.db
+*.docx
 
 # IDE Configs
 .vscode/

@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: str_logic_validation_postgres
+    environment:
+      POSTGRES_DB: str_logic_validation
+      POSTGRES_USER: str_user
+      POSTGRES_PASSWORD: str_password
+    ports:
+      - "55432:5432"
+    volumes:
+      - str_logic_validation_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U str_user -d str_logic_validation"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  str_logic_validation_pgdata:
