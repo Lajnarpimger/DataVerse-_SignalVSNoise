@@ -361,7 +361,48 @@ def validate_income_profile(reason: str) -> list[dict[str, Any]]:
     ]
 
 
-def validate_reason_claims(evidence_packet: dict[str, Any]) -> dict[str, Any]:
+VALIDATORS_BY_TYPE = {
+    "account_holder": lambda reason, current, account_kyc, transaction, ml_features: validate_account_holder(reason, current, account_kyc),
+    "institution": lambda reason, current, account_kyc, transaction, ml_features: validate_institution(reason, current, account_kyc),
+    "amount": lambda reason, current, account_kyc, transaction, ml_features: validate_amount(reason, current, transaction),
+    "cross_border": lambda reason, current, account_kyc, transaction, ml_features: validate_cross_border(reason, current, transaction, ml_features),
+    "transaction_count": lambda reason, current, account_kyc, transaction, ml_features: validate_transaction_count(reason, ml_features),
+    "sanctions": lambda reason, current, account_kyc, transaction, ml_features: validate_sanctions(reason, account_kyc, ml_features),
+    "adverse_media": lambda reason, current, account_kyc, transaction, ml_features: validate_adverse_media(reason),
+    "account_tenure": lambda reason, current, account_kyc, transaction, ml_features: validate_account_tenure(reason, current, account_kyc),
+    "velocity": lambda reason, current, account_kyc, transaction, ml_features: validate_rapid_succession(reason, ml_features),
+    "counterparty": lambda reason, current, account_kyc, transaction, ml_features: validate_counterparty(reason),
+    "kyc_income_profile": lambda reason, current, account_kyc, transaction, ml_features: validate_income_profile(reason),
+}
+
+
+def dedupe_validations(validations: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen = set()
+    deduped = []
+    for item in validations:
+        key = (item.get("type"), lower(item.get("claim")), item.get("status"))
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(item)
+    return deduped
+
+
+def not_checkable_extracted_claim(extracted_claim: dict[str, str]) -> dict[str, Any]:
+    return claim(
+        extracted_claim.get("claim_text", ""),
+        extracted_claim.get("claim_type", "other"),
+        STATUS_NOT_CHECKABLE,
+        [
+            "The LLM extracted this claim, but there is no deterministic validator for this claim wording/type yet."
+        ],
+    )
+
+
+def validate_reason_claims(
+    evidence_packet: dict[str, Any],
+    extracted_claims: list[dict[str, str]] | None = None,
+) -> dict[str, Any]:
     reason = evidence_packet.get("reason") or ""
     current = evidence_packet.get("current_report") or {}
     account_kyc = evidence_packet.get("account_kyc")
@@ -369,22 +410,25 @@ def validate_reason_claims(evidence_packet: dict[str, Any]) -> dict[str, Any]:
     ml_features = evidence_packet.get("ml_features")
 
     validations: list[dict[str, Any]] = []
-    validators = [
-        lambda: validate_account_holder(reason, current, account_kyc),
-        lambda: validate_institution(reason, current, account_kyc),
-        lambda: validate_amount(reason, current, transaction),
-        lambda: validate_cross_border(reason, current, transaction, ml_features),
-        lambda: validate_transaction_count(reason, ml_features),
-        lambda: validate_sanctions(reason, account_kyc, ml_features),
-        lambda: validate_adverse_media(reason),
-        lambda: validate_account_tenure(reason, current, account_kyc),
-        lambda: validate_rapid_succession(reason, ml_features),
-        lambda: validate_counterparty(reason),
-        lambda: validate_income_profile(reason),
-    ]
+    if extracted_claims:
+        for extracted_claim in extracted_claims:
+            claim_type = extracted_claim.get("claim_type", "other")
+            validator = VALIDATORS_BY_TYPE.get(claim_type)
+            if validator is None:
+                validations.append(not_checkable_extracted_claim(extracted_claim))
+                continue
+            claim_validations = validator(reason, current, account_kyc, transaction, ml_features)
+            if claim_validations:
+                validations.extend(claim_validations)
+            else:
+                validations.append(not_checkable_extracted_claim(extracted_claim))
+    else:
+        for validator in VALIDATORS_BY_TYPE.values():
+            validations.extend(
+                validator(reason, current, account_kyc, transaction, ml_features)
+            )
 
-    for validator in validators:
-        validations.extend(validator())
+    validations = dedupe_validations(validations)
 
     status_counts = {
         status: sum(1 for item in validations if item["status"] == status)
@@ -409,6 +453,7 @@ def validate_reason_claims(evidence_packet: dict[str, Any]) -> dict[str, Any]:
     return {
         "report_id": current.get("report_id"),
         "overall_assessment": assessment,
+        "extracted_claims": extracted_claims or [],
         "status_counts": status_counts,
         "claim_validations": validations,
         "data_quality_flags": evidence_packet.get("data_quality_flags", []),
